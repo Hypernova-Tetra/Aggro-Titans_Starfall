@@ -1,4 +1,4 @@
-## Aggro-Titans Starfall Update
+## Aggro-Titans Starfall
 
 * Coming somewhere in August.
 

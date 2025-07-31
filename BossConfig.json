@@ -1,0 +1,430 @@
+{
+	"Groups": 
+	[
+		{
+		  "Name": "Main",
+		  "DisplayName": "Boss Settings",
+		  "Elements":
+			[
+				{
+					"Name":"BossCombat",
+					"DisplayName":"Combat Mods",
+					"Description":["Using Combat Mods? Toggle them here"],
+					"Type":"BossHP",
+					"MinValue":null,
+					"MaxValue":null,
+					"DefaultValue":"0"
+				}
+			]
+		},
+		{
+		  "Name": "Main",
+		  "DisplayName": "Titan Boss Settings",
+		  "Elements":
+			[
+				{
+				"Name":"IncludeDir1",
+				"DisplayName":"Titan Audio",
+				"Description":["..."],
+				"Type":"TitanAudio",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_Audio_0rgn"
+				},
+				{
+				"Name":"BossX40",
+				"DisplayName":"Titans Phase 2 Scene Skip",
+				"Description":["An experimental feature to skip the boss's Phase 2 cutscenes."],
+				"Type":"BossPhase2",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"1"
+				},
+				{
+				"Name":"BossGiant1160",
+				"DisplayName":"Giganto Finale",
+				"Description":["Choose the scene of Giganto's defeat."],
+				"Type":"BossGiantFinale",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"0"
+				},
+				{
+				"Name":"BossDragonFinish",
+				"DisplayName":"Wyvern Final QTE",
+				"Description":["Choose the scene of the final Wyvern QTE"],
+				"Type":"BossDragonFinal",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"0"
+				},
+				{
+				"Name":"IncludeDir2",
+				"DisplayName":"Supreme Intro",
+				"Description":["Test."],
+				"Type":"SupremeIntro",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_Bo4x00_Intro_0rgn"
+				},
+				{
+				"Name":"IncludeDir3",
+				"DisplayName":"Supreme QTE Preset",
+				"Description":["Choose between 3 batches of QTE Scenes for Supreme."],
+				"Type":"SupremeB",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_RifleQTE_01"
+				},
+				{
+				"Name":"BossZevRifleSp00",
+				"DisplayName":"Supreme Grand Slam",
+				"Description":["Choose how you want the Grand Slam to play out."],
+				"Type":"BossRifleSp00",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"0"
+				},
+				{
+				"Name":"IncludeDir7",
+				"DisplayName":"Supreme Wing Laser",
+				"Description":["Choose the version of Supreme's godly laser attcak."],
+				"Type":"BossRifleWing",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_RifleWingLaser1"
+				}
+			]
+		},
+		{
+		  "Name": "Main",
+		  "DisplayName": "Final Horizons Settings",
+		  "Elements":
+			[
+				{
+				"Name":"RifleShieldFix",
+				"DisplayName":"Riflebeast Shield Tackle Removal",
+				"Description":["Toggle this option to disable Supreme's Shield Tackle if parrying this attack causes your game to crash."],
+				"Type":"NoTackle",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"0"
+				},
+				{
+				"Name":"IncludeDir4",
+				"DisplayName":"The End monologue during cutscenes",
+				"Description":["This mod modifies file: 'bo6xxx.pac' to restore the Monologue. Adds the default 'bgm_boss05' in the files to avoid confliction with other mods that restore the monologue using this file. Place THIS mod above the other mods that implimented the monologue that way. If you don't want to have the monologue heard through the game's cutscenes, you can keep this mod disabled."],
+				"Type":"SupremeM",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_Bo6x00a_Silen0"
+				},
+				{
+				"Name":"IncludeDir5",
+				"DisplayName":"Parrymiss QTE",
+				"Description":["Added support for Hyper Sonic skins"],
+				"Type":"ZevMiss",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_QTE_Miss_0rgn"
+				},
+				{
+				"Name":"BossBeastBall",
+				"DisplayName":"Riflebeast Darkball QTE",
+				"Description":["Experimental QTE option"],
+				"Type":"BossDarkballQTE",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"1"
+				},
+				{
+				"Name":"IncludeDir6",
+				"DisplayName":"The Final Blow QTE",
+				"Description":["The Final QTE has small changes."],
+				"Type":"ZevBlow",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_QTE_Blow_0rgn"
+				}
+			]
+		}
+	 ],
+
+	"Enums":
+	{
+		"BossHP":
+		[
+			{
+			"DisplayName":"Off",
+			"Value":"0",
+			"Description":["Vanilla"]
+			},
+			{
+			"DisplayName":"On",
+			"Value":"1",
+			"Description":["Lowered HP for certain combat mods that change Sonic's combat style."]
+			}
+		],
+		"BossPhase2":
+		[
+			{
+			"DisplayName":"Off",
+			"Value":"0",
+			"Description":["As default. Unskippable Phase 2 cutscenes for all Titans except Final Horizon 'THE END'."]
+			},
+			{
+			"DisplayName":"On (Experimental)",
+			"Value":"1",
+			"Description":["A rough implimentation of the Phase 2 cutscenes being skippable, may have some issues I can't fully flesh out."]
+			},
+		],
+		"BossGiantFinale":
+		[
+			{
+			"DisplayName":"Giganto Defeated (Original)",
+			"Value":"0",
+			"Description":["As is in the game."]
+			},
+			{
+			"DisplayName":"Giganto Defeated (Beta-Inspired)",
+			"Value":"1",
+			"Description":["A recreated version of the beta animation using Giganto's 'Damage_Finish' animation."]
+			},
+			{
+			"DisplayName":"Giganto Defeated (Mix)",
+			"Value":"2",
+			"Description":["A combination of both animations."]
+			}
+		],
+		"TitanAudio":
+		[
+			{
+			"DisplayName":"Original Audio",
+			"Value":"MBoss_Audio_0rgn",
+			"Description":["Original Audio from release."]
+			},
+			{
+			"DisplayName":"Sound Edit",
+			"Value":"MBoss_Audio_Edit",
+			"Description":["Edited Sounds"]
+			},
+			{
+			"DisplayName":"Sound Overhaul",
+			"Value":"MBoss_Audio_SO",
+			"Description":["Sound Overhaul"]
+			}
+		],
+		"BossDragonFinal":
+		[
+			{
+			"DisplayName":"Wyvern Finale (Original)",
+			"Value":"0",
+			"Description":["As is in the game."]
+			},
+			{
+			"DisplayName":"Wyvern Finale (Beta Inspired)",
+			"Value":"1",
+			"Description":["Utilizes an unused version left in the game files, with some changes."]
+			}
+		],
+		"RifleEvent":
+		[
+			{
+			"DisplayName":"Off",
+			"Value":"0",
+			"Description":["00."]
+			},
+			{
+			"DisplayName":"On",
+			"Value":"1",
+			"Description":["01."]
+			}
+		],
+		"BossRifleWing":
+		[
+			{
+			"DisplayName":"Version 1",
+			"Value":"MBoss_RifleWingLaser1",
+			"Description":["Sonic combos the deadly laser and ends in Sonic kicking the attack back at Supreme in a familiar way."]
+			},
+			{
+			"DisplayName":"Version 2",
+			"Value":"MBoss_RifleWingLaser2",
+			"Description":["Sonic continuous stomp-kicks the laser beam that ends in Sonic punching the attack. Wonder if the rapid stomp attack references anything, could be obscure."]
+			}
+		],
+		"BossRifleSp00":
+		[
+			{
+			"DisplayName":"Default",
+			"Value":"0",
+			"Description":["**Experimental** Will use the original version. The animation for Supreme is slightly modified."]
+			},
+			{
+			"DisplayName":"Unused Cinematic Event",
+			"Value":"1",
+			"Description":["**Experimental** Restores the unused cutscene for Supreme's Grand Slam. Known Issues- 1: Does not inflict damage due to missing parameters in the rfl file. 2: After activation, the game may crash when trying to parry Riflebeast's arms in Phase 2."]
+			}
+		],
+		"SupremeB":
+		[
+			{
+			"DisplayName":"Restored Vanilla",
+			"Value":"MBoss_RifleQTE_01",
+			"Description":["The original unused scenes restored and Bitlaser is now a QTE."]
+			},
+			{
+			"DisplayName":"Retooled",
+			"Value":"MBoss_RifleQTE_02",
+			"Description":["Unique scenes utilizing unused animation files for new sequences."]
+			},
+			{
+			"DisplayName":"Oops All BitLaser",
+			"Value":"MBoss_RifleQTE_03",
+			"Description":["Supreme uses the large diamond turrets more often here. Bitlaser01 and 02 have their extended uncut animations."]
+			}
+		],	
+		"NoTackle":
+		[
+			{
+			"DisplayName":"Off",
+			"Value":"0",
+			"Description":["If you're not having this issue, leave this off."]
+			},
+			{
+			"DisplayName":"On",
+			"Value":"1",
+			"Description":["Use only when your game crashes when trying to parry Supreme's arms when stopping him from tackling Sage and Friend's barrier."]
+			}
+		],
+		"BossDarkballQTE":
+		[
+			{
+			"DisplayName":"Off",
+			"Value":"0",
+			"Description":["Disabled"]
+			},
+			{
+			"DisplayName":"On",
+			"Value":"1",
+			"Description":["Enabled"]
+			}
+		],
+		"ZevMiss":
+		[
+			{
+			"DisplayName":"Vanilla",
+			"Value":"MBoss_QTE_Miss_0rgn",
+			"Description":["The original animation from the release of the DLC."]
+			},
+			{
+			"DisplayName":"Hyper_Blue Aura",
+			"Value":"MBoss_QTE_Miss_0rgnB",
+			"Description":["Same as the 'Edited' option but with Hyper Sonic's blue outline."]
+			},
+		],
+		"ZevBlow":
+		[
+			{
+			"DisplayName":"Vanilla",
+			"Value":"MBoss_QTE_Blow_0rgn",
+			
+			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."]
+			},
+			{
+			"DisplayName":"Vanilla (Hyper_Blue Aura)",
+			"Value":"MBoss_QTE_Blow_0rgnB",
+			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."]
+			},
+			{
+			"DisplayName":"Edited",
+			"Value":"MBoss_QTE_Blow_Edit0",
+			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."]
+			},
+			{
+			"DisplayName":"Edited (Hyper_Blue Aura)",
+			"Value":"MBoss_QTE_Blow_EditB",
+			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."]
+			}
+		],	
+		"SupremeM":
+		[
+			{
+			"DisplayName":"Off (Original Animation)",
+			"Value":"MBoss_Bo6x00a_Silen0",
+			"MinValue":0,
+			"Description":["The Fake Moon just floats there, menacingly."]
+			},
+			{
+			"DisplayName":"Off (Edited Animation)",
+			"Value":"MBoss_Bo6x01a_Silen0",
+			"MinValue":0,
+			"Description":["The moon remains high in the sky puppeterring Supreme in silent. SS2's transformation has a slight camera change."]
+			},
+			{
+			"DisplayName":"Off (Hyper_Blue Aura / Original)",
+			"Value":"MBoss_Bo6x00a_SilenB",
+			"MaxValue":1,
+			"Description":["Original animation but for character skins using Hyper forms over SS2. Blue Aura only."]
+			},
+			{
+			"DisplayName":"Off (Hyper_Blue Aura / Edited)",
+			"Value":"MBoss_Bo6x01a_SilenB",
+			"MaxValue":1,
+			"Description":["Same as SS2 Edited, but with different effects to fit Hyper Sonic's transformation."]
+			},
+			{
+			"DisplayName":"On (Original Animation)",
+			"Value":"MBoss_Bo6x00b_Mon0",
+			"MinValue":0,
+			"Description":["The End will praddle on and start boasting in certain cutscenes. It will also flex its high kill count."]
+			},
+			{
+			"DisplayName":"On (Edited Animation)",
+			"Value":"MBoss_Bo6x01b_Mon0",
+			"MinValue":0,
+			"Description":["The End will start its blog yap session on how powerful it is and how Sonic is weak and meaningless. SS2's transformation has a slight camera change and a little extra effects."]
+			},
+			{
+			"DisplayName":"On (Hyper_Blue Aura / Original)",
+			"Value":"MBoss_Bo6x00b_MonB",
+			"MaxValue":1,
+			"Description":["Original animation but for character skins using Hyper forms over SS2. Blue Aura only. The End will start yapping."]
+			},
+			{
+			"DisplayName":"On (Hyper_Blue Aura / Edited)",
+			"Value":"MBoss_Bo6x01b_MonB",
+			"MaxValue":1,
+			"Description":["Same as SS2 Edited, but with different effects to fit Hyper Sonic's transformation."]
+			}
+		],
+		"SupremeIntro":
+		[
+			{
+			"DisplayName":"Original",
+			"Value":"MBoss_Bo4x00_Intro_0rgn",
+			"Description":["00."]
+			},
+			{
+			"DisplayName":"Extended",
+			"Value":"MBoss_Bo4x01_Intro_Extn",
+			"Description":["01."]
+			}
+		],
+		"TestDir":
+		[
+			{
+			"DisplayName":"Test00",
+			"Value":"TestA",
+			"Description":["00."]
+			},
+			{
+			"DisplayName":"Test01",
+			"Value":"TestB",
+			"Description":["01."]
+			}
+		]
+	},
+	
+   "IniFile":"mod.ini"
+}

@@ -1,0 +1,86 @@
+Patch "Hardcoded Audio Patch" by "Hypernova"
+{
+	WriteProtected<byte>
+	(
+		/* 0x141534D0 */ ScanSignature    ("boss_giant01_bo1120","xxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+	);
+	
+	WriteProtected<byte>
+    (
+        /* 0x141453528 */ ScanSignature   ("boss_giant01_bo1160","xxxxxxxxxxxxxxxxxxx"),
+        System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+    );
+	
+	WriteProtected<byte>
+	(
+		/* 0x141453550 */ ScanSignature   ("boss_giant01_bo1180", "xxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+	);
+	
+	WriteProtected<byte>
+    (
+        /* 0x141556030 */ ScanSignature   ("boss_giant02_bo2110","xxxxxxxxxxxxxxxxxxx"),
+        System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+    );
+	
+	WriteProtected<byte>
+    (
+        /* 0x14144C948 */ ScanSignature   ("boss_giant02_bo2115","xxxxxxxxxxxxxxxxxxx"),
+        System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+    );
+	
+    WriteProtected<byte>
+    (
+        /* 0x14144C968 */ ScanSignature   ("boss_giant02_bo2120","xxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+    );
+	
+	WriteProtected<byte>
+	(
+		/* 0x14144CA50 */ ScanSignature   ("boss_giant02_bo2160", "xxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+	);
+		
+	WriteProtected<byte>
+    (
+        /* 0x14144C9A8 */ ScanSignature   ("boss_giant02_bo2180", "xxxxxxxxxxxxxxxxxxx"),
+        System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+    );
+	
+	WriteProtected<byte>
+	(
+		/* 0x14145C298 */ ScanSignature   ("boss_giant03_bo3160", "xxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+	);
+	
+	WriteProtected<byte>
+	(
+		/* 0x14145C2C0 */ ScanSignature   ("boss_giant03_bo3180", "xxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+	);
+}
+
+Code "Unused Cutscene Stuff" by "Hypernova"
+{
+	// This is just here to keep note of the memory address of the unused cutscenes. Not much else and doesn't have any effect of the mod with how it's currently coded. //
+	WriteProtected<byte>
+	(
+		/* 0x14145C160 */ ScanSignature   ("zev_knight_shieldride01_aerial","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("zev_knight_shieldride01_aerial")
+	);
+		
+	WriteProtected<byte>
+	(
+		/* 0x14145C180 */ ScanSignature   ("zev_knight_shieldride01_aerial_short","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("zev_knight_shieldride01_aerial_short")
+	);
+	
+	WriteProtected<byte>
+	(
+		/* 0x14140F5D0 */ ScanSignature ("ga3220", "xxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("ga3220")
+	);
+}
+
+

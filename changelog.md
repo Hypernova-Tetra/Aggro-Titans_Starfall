@@ -1,6 +1,6 @@
 ## Aggro-Titans Starfall
 
-* Will release some time in August.
+* Some time before August 15.
 
 
 
@@ -15,6 +15,8 @@
 * Sonic's 0 Ring Cutscenes (bo1180, bo2180, bo3180, and bo4180) have a Phase 2 version added.
 * Fixed an issue with Riflebeast's cable asset not using the correct animation during the Darkball QTE.
 * Fixed the issue in where Riflebeast's Material and UV animations didn't play properly in certain cutscenes.
+* Config tweaks.
+* No more confliction with other mods using "master.levels" file.
 
 
 

@@ -17,6 +17,8 @@
 * Fixed the issue in where Riflebeast's Material and UV animations didn't play properly in certain cutscenes.
 * Config tweaks.
 * No more confliction with other mods using "master.levels" file.
+* Restored unused Cyloop Counter animation for Giganto.
+* Code Tweak for Wyvern's Phase 2 cutscene when the "Skip" option is active. Reverted to Lua.Call functions to fix a lingering issue with Sonic being respawned in the wrong spot after the cutscene ends.
 
 
 
@@ -284,4 +286,5 @@ Things that were done right when I thought I was done with the mod as a whole, b
 
 ## Aggro-Titans V0.0
 
-* Work In Progress
+Work In Progress
+

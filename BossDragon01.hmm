@@ -1,3 +1,57 @@
+Code "Wyvern_Combat"
+//
+	#include "Reflection" noemit
+	#lib "Reflection"
+	#lib "BossDragonConfig"
+    #lib "HMM"
+	#lib "INI"
+    #import "Services"
+
+    static bool IsConfigInitialised = false;
+	static int BossHP = 0;
+    static bool healthBool = false;
+//
+{
+	var BossDragonConfigInfo = Reflection.GetDataInfo<BossDragonConfig.Root>("boss_dragon");
+	if (BossDragonConfigInfo.pData == null)
+		return;
+		
+	bool gameModeBattleRush = GameMode.GetName() == "GameModeBattleRush"
+	if (gameModeBattleRush)
+	{ 
+		RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 50000); 
+		RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 4500);
+		RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 2800);
+	}
+		
+    if (!IsConfigInitialised)
+    {
+		var mod = HMM.GetModByID("566416");
+
+		if (mod == null)
+			return;
+
+		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
+		var ini = INI.Read(modConfigIniPath);
+
+		BossHP = INI.Parse<int>(ini["Main"]["BossCombat"], BossHP);
+        IsConfigInitialised = true;
+			
+        if ((BossHP == 1) || (BossHP == 2))
+        {
+			RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 150000);
+			RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 8250);
+			RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 3500);
+		}
+        else
+        {
+			RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 266000);
+			RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 11500);
+			RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 9000);
+		}
+    }
+};
+
 Code "ATK_Scratch 1" by "Ashrindy"
 //
     static long AdScratch1 = 0;
@@ -37,74 +91,6 @@ Code "Counter_Tail Attack" by "Ashrindy"
     {WriteProtected<byte>(AdCounterT, System.Text.Encoding.UTF8.GetBytes(Counter[new Random().Next(0, Counter.Length)]));}
 } 
 
-Code "QTE_Psycho" by "Hypernova"
-//
-    static long PsychoQTE = 0;
-    static string[] qte_2 = new[]
-    { /* sup */ "zev_dragon_sp_psycho", };
-//
-{
-    if (PsychoQTE == 0)
-    {/* 0x14144CA10 */ PsychoQTE = ScanSignature ("zev_dragon_sp_psycho", "xxxxxxxxxxxxxxxxxxxx");}
-    else
-    {WriteProtected<byte>(PsychoQTE, System.Text.Encoding.UTF8.GetBytes(qte_2[new Random().Next(0, qte_2.Length)]));}
-}
-
-Code "Wyvern_Combat"
-//
-	#include "Reflection" noemit
-	#lib "Reflection"
-	#lib "BossDragonConfig"
-    #lib "HMM"
-	#lib "INI"
-    #import "Services"
-
-    static bool IsConfigInitialised = false;
-	static int BossHP = 0;
-    static bool healthBool = false;
-//
-{
-    if (!IsConfigInitialised)
-    {
-		var mod = HMM.GetModByID("566416");
-
-		if (mod == null)
-			return;
-
-		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
-		var ini = INI.Read(modConfigIniPath);
-
-		BossHP = INI.Parse<int>(ini["Main"]["BossCombat"], BossHP);
-        IsConfigInitialised = true;
-
-		string currentStage = LevelInfo.GetCurrentStageID();
-		
-		var BossDragonConfigInfo = Reflection.GetDataInfo<BossDragonConfig.Root>("boss_dragon");
-		
-		if (BossDragonConfigInfo.pData == null)
-			return;
-		
-		if (LevelInfo.GetCurrentStageID() == "w2b01")
-		{ 
-			RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 50000); 
-			RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 4500);
-			RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 2800);
-		}
-        else if (BossHP == 1)
-        {
-			RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 150000);
-			RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 8250);
-			RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 3500);
-		}
-        else
-        {
-			RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 367000);
-			RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 120000);
-			RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 9000);
-		}
-    }
-};
-
 Code "Wyvern Special Extra" by Hypernova
 //
 	#include "Reflection" noemit
@@ -139,36 +125,6 @@ Code "Wyvern Special Extra" by Hypernova
 			RFL_SET_PARAM(BossDragonConfigInfo, interrupts[2].interrupt, BossDragonConfig.BossDragonInterrupt.SPECIAL_ATTACK);
 			RFL_SET_PARAM(BossDragonConfigInfo, interrupts[2].forceInterrupt, true);
 		}
-	}
-};
-
-Code "Gamemode Battle Rush Wyvern" 
-//
-    using System.Numerics;
-    using System.Collections.Generic;
-    using System.IO;
-	#import "Services"
-	#include "Reflection" noemit
-    #load "WindowsBase.dll"
-    #load "PresentationCore.dll"
-    #load "System.Numerics.dll"
-	#lib "Reflection"
-	#lib "BlackboardStatus"
-    #lib "HMM"
-	#lib "INI"
-	#lib "GameMode"
-	#lib "BossDragonConfig"
-//
-
-bool gameModeBattleRush = GameMode.GetName() == "GameModeBattleRush"
-if (gameModeBattleRush)
-{
-	{
-		var BossDragonConfigInfo = Reflection.GetDataInfo<BossDragonConfig.Root>("boss_dragon");
-		if (BossDragonConfigInfo.pData == null)
-			return;
-
-		RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 83300);
 	}
 };
 

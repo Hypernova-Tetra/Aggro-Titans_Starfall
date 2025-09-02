@@ -1,6 +1,30 @@
-## Aggro-Titans Starfall
+## **Aggro-Titans Starfall**- 2025.09.02
 
-* Release Build version 1.25
+
+
+##### ***Aggro-Titans version 1.3***
+
+* Bumped to version 1.3 for release.
+
+
+
+##### Aggro-Titans (Test) 1.26
+
+* Updated "bo1xxx.pac" includes a new Phase 2 scene exclusive to Master King's Trial courtesy of Tru-blu.
+* Added a toggle option for Sonic's Animation Speed Changes
+* Very small update to Supreme's subphases in Phase 1.
+* Tweaked .hmm code files to iron out potential issues with performance problems.
+* Tweaked BossEvent.hmm, BossRifle01.hmm, and BossRiflebeast.hmm by reimplementing certain changes based off version 1.25b and improved them with the newer changes.
+* Improved Unused Grand Slam Event animation for Supreme.
+* Changed Memory Address of Giganto's Beta Defeat cutscene in the mod's coding to not inflict with an unused memory address with the game.
+* Lowered the HP of the Titans when using non-modded Max Stat Sonic.
+* Added a toggle option to choose between Default Texture and MatiosDX's Fitting Textures mod.
+* A variant of Wyvern's Psycho QTE was added that restores an unused shot. Some tweaks to Wyvern were made.
+* Fixed a sound sync error in a scene.
+* A slight tweak to the custom scene of Supreme's defeat.
+* Supreme's Intro Cutscene config option has under-the-hood tweaks done.
+* Giganto's blue rings have a toggle option.
+* Wyvern Counter Laser animation tweaked. The unused version now plays at Phase 2 on either side of Wyvern
 
 
 

@@ -59,15 +59,6 @@
 				"DefaultValue":"MBoss_Audio_0rgn"
 				},
 				{
-				"Name":"BossX40",
-				"DisplayName":"Titans Phase 2 Scene Skip",
-				"Description":["An experimental feature to skip the boss's Phase 2 cutscenes."],
-				"Type":"BossPhase2",
-				"MinValue":null,
-				"MaxValue":null,
-				"DefaultValue":"1"
-				},
-				{
 				"Name":"BossGiantRings",
 				"DisplayName":"Giganto Blue Rings",
 				"Description":["Test"],
@@ -232,35 +223,27 @@
 			"Description":["Changes the animation speed of Loop Kick and Wild Rush so that the attacks go by a bit faster."]
 			}
 		],
-		"BossPhase2":
-		[
-			{
-			"DisplayName":"Off",
-			"Value":"0",
-			"Description":["As default. Unskippable Phase 2 cutscenes for all Titans except Final Horizon 'THE END'."]
-			},
-			{
-			"DisplayName":"On (Experimental)",
-			"Value":"1",
-			"Description":["A rough implimentation of the Phase 2 cutscenes being skippable, may have some issues I can't fully flesh out."]
-			},
-		],
 		"BossGiantFinale":
 		[
 			{
-			"DisplayName":"Giganto Defeated (Original)",
+			"DisplayName":"Original",
 			"Value":"0",
-			"Description":["As is in the game."]
+			"Description":["As is in the vanilla game."]
 			},
 			{
-			"DisplayName":"Giganto Defeated (Beta-Inspired)",
+			"DisplayName":"Beta-Inspired",
 			"Value":"1",
 			"Description":["A recreated version of the beta animation using Giganto's 'Damage_Finish' animation."]
 			},
 			{
-			"DisplayName":"Giganto Defeated (Mix)",
+			"DisplayName":"Hypernova Mix",
 			"Value":"2",
-			"Description":["A combination of both animations."]
+			"Description":["A combination of the original and the beta-inspired."]
+			},
+			{
+			"DisplayName":"Tru-Blu's Version",
+			"Value":"3",
+			"Description":["Title speaks for itself."]
 			}
 		],
 		"TitanSkin1":
@@ -280,7 +263,7 @@
 		[
 			{
 			"DisplayName":"Original Audio",
-			"Value":"Main_FittingTexture",
+			"Value":"MBoss_Audio_0rgn",
 			"Description":["Original Audio from release."]
 			},
 			{
@@ -310,14 +293,14 @@
 		"BossDragonFinal":
 		[
 			{
-			"DisplayName":"Wyvern Finale (Original)",
+			"DisplayName":"Original",
 			"Value":"0",
 			"Description":["As is in the game."]
 			},
 			{
-			"DisplayName":"Wyvern Finale (Beta Inspired)",
+			"DisplayName":"Beta-Inspired",
 			"Value":"1",
-			"Description":["Utilizes an unused version left in the game files, with some changes."]
+			"Description":["Using the original QTE as a base, with the change that uses a different shot of Sonic struggling to fight back against Wyvern's bite, utilizing leftover files."]
 			}
 		],
 		"RifleStart":

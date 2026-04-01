@@ -36,6 +36,13 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 	static bool smashBool = false;
 	static bool initialized = false;
 	static bool IsConfigInitialised = false;
+	
+	#lib "BossRifleBeastConfig"
+	static int ReplaceNum = 0;
+    static BossRifleBeastConfig.AtackType[] AttackReplacers = new BossRifleBeastConfig.AtackType[2];
+    AttackReplacers[0] = BossRifleBeastConfig.AtackType.AT_CROW_L;
+    AttackReplacers[1] = BossRifleBeastConfig.AtackType.AT_CROW_R;
+    var RifleBeastInfo = Reflection.GetDataInfo<BossRifleBeastConfig.Root>("boss_rifle_beast");
 
 	static long AddressSplDmg = 0;
 //
@@ -104,13 +111,11 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 		{
 			WriteProtected<byte>(AddressSplDmg, System.Text.Encoding.UTF8.GetBytes("special_atk_cyloop"));
 			
-			if ((XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B)) && (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS))
-			{	
-				{
-					var setupData = new EventPlayer.EventSetupData("zev_rfl_grandsmash");
-					setupData.playFlags &= (EventPlayer.EventSetupData.PlayFlag)0xFFFFFFFB; //CantSkip//
-					evtPlayer->PlayEvent(ref setupData);
-				}
+			if ((Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS) && (XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B)))
+			{
+				var setupData = new EventPlayer.EventSetupData("zev_rfl_grandsmash");
+				setupData.playFlags &= (EventPlayer.EventSetupData.PlayFlag)0xFFFFFFFB; //CantSkip//
+				evtPlayer->PlayEvent(ref setupData);
 				
 				if (rings < 400)
 				{
@@ -132,34 +137,7 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 		}
 		else 
 		{ WriteProtected<byte>(AddressSplDmg, System.Text.Encoding.UTF8.GetBytes("special_atk_damage")); }
-	}
-}
-
-Code "Fixing the Unused Grand Slam Event Crash side-effect for Riflebeast AT_Tackle"
-//
-	#import "Services"
-	#import "Plugins"
-	#include "Reflection" noemit
-	#lib "Reflection"
-    #lib "HMM"
-	#lib "INI"
-    #lib "EventPlayer"
-	#lib "BossRifleBeastConfig"
-	static int ReplaceNum = 0;
-    static BossRifleBeastConfig.AtackType[] AttackReplacers = new BossRifleBeastConfig.AtackType[2];
-    // there was originally more to this array 
-    AttackReplacers[0] = BossRifleBeastConfig.AtackType.AT_CROW_L;
-    AttackReplacers[1] = BossRifleBeastConfig.AtackType.AT_CROW_R;
-    var RifleBeastInfo = Reflection.GetDataInfo<BossRifleBeastConfig.Root>("boss_rifle_beast");
-//
-{	
-	var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
-	if (evtPlayer == null)
-		return;
-	
-	bool unusedEvnt1 = evtPlayer->IsEventPlaying("zev_rfl_grandsmash");
-	if (unusedEvnt1)
-	{
+		
 		var BossRifleBeastConfigInfo = Reflection.GetDataInfo<BossRifleBeastConfig.Root>("boss_rifle_beast");
 		if (BossRifleBeastConfigInfo.pData == null)
 			return;

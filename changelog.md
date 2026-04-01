@@ -1,8 +1,52 @@
-## **Aggro-Titans Starfall**- 2025.09.02
+## **Aggro-Titans Starfall**- 2025.11.30
 
 
 
-##### ***Aggro-Titans version 1.3***
+### ***Aggro-Titans 1.4 Update***
+
+* Release Date Unknown
+
+
+
+##### ***Aggro-Titans version 1.35***
+
+* Overhauled Monologue entries, less folders, more streamlined.
+* Some tweaks in bo6120, bo6165, and bo6190.
+
+
+
+##### ***Aggro-Titans version 1.34***
+
+* Fixed a typo in one of the config values
+* Update Sonic 0 Ring Cutscene for Phase 2 in Supreme's fight.
+* Updated bo1xxx.pac to fix some errors
+
+
+
+##### ***Aggro-Titans version 1.33***
+
+* Updated code to have "AT\_Tackle" be automatically disabled when "Unused Grand Slam Event" option is selected for Supreme.
+* Added Tru-Blu animation for Super Sonic Transformation for Master King's Trial only.
+* Added Tru-Blu Giganto Defeat as a 4th Option in Giganto Finale section.
+* Updated scene file: "zev\_rfl\_wing.pac"
+
+
+
+##### ***Aggro-Titans version 1.32***
+
+* BossEvent.hmm and BossTitanFinish.hmm files removed.
+* Added "Boss(Name)Dynamics" hmm files for their respective Titan bosses and the code for "TitanFinish" is moved to the Dynamics hmm files based on the respective Titan.
+
+
+
+##### ***Aggro-Titans version 1.31***
+
+* Updated "bo3xxx.pac" Super Sonic now shows up when the Super Sonic transformation scene transitions to the fight.
+* Updated Grand Slam scene file for Riflebeast in name only for Phase 1 to avoid conflicts with Sonic skin mods.
+
+
+
+##### Aggro-Titans version 1.3
 
 * Bumped to version 1.3 for release.
 

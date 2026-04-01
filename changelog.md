@@ -18,8 +18,9 @@ Public Release!
 
 C-03
 
-* Updated voice files.
+* Updated voice files for Final Horizons Monologue
 * Updated Super Sonic 2 transformation scene from ending too early.
+* Small tweaks.
 
 C-02
 

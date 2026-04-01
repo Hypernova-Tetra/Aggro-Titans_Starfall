@@ -47,10 +47,7 @@ Code "Sonic Battle Edits"
 			return;
 			
 		string currentStage = LevelInfo.GetCurrentStageID();
-			
-		bool isSupreme = (GameManager.GetGameObject("Rifle0") != null);
-		bool isRiflebeast = (GameManager.GetGameObject("RifleBeast0") != null);
-		
+
 		var SonicParametersInfo = Reflection.GetDataInfo<SonicParameters.Root>("player_common");
 
 		if (SonicParametersInfo.pData == null)
@@ -180,9 +177,8 @@ Code "Sonic Battle Edits"
 		RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitInAir[5], SonicParameters.Action.HomingShot);
 		RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitExistTarget[5], SonicParameters.Action.HomingShot);
 		
-		bool isCond1 = ((BossRifleSp00 == 1) && (isRiflebeast))
-		bool isCond2 = ((BossRifleSp00 == 0) && (isRiflebeast))
-		if ((isCond1) || (isCond2))
+		bool isCond1 = ((BossRifleSp00 == 1) && (GameManager.GetGameObject("RifleBeast0") != null))
+		if (isCond1)
 		{
 			if (IS_WORLD_FLAG(IsBattle) && BlackboardStatus.IsSuper())
 			{
@@ -196,17 +192,16 @@ Code "Sonic Battle Edits"
 				RFL_SET_PARAM(SonicParametersInfo, common.smashSet.superSonic1.hit2.shapeSize.X, 35.0f);
 				RFL_SET_PARAM(SonicParametersInfo, common.smashSet.superSonic1.hit2.shapeSize.Y, 35.0f);
 				
-				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitExistTarget[2], SonicParameters.Action.Smash);
 				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitExistTarget[3], SonicParameters.Action.CrossSlash);
 				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitInAir[0], SonicParameters.Action.Pursuit);
 				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitInAir[2], SonicParameters.Action.QuickCyloop);
 				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitInAir[3], SonicParameters.Action.ChargeAttack);
 				
-				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.quickCyloop.transitExistTarget[3], SonicParameters.Action.Smash);
-				
-				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.aerialQuickCyloop.transitExistTarget[3], SonicParameters.Action.Smash);
-				
 				RFL_SET_PARAM(SonicParametersInfo, common.cyloop.lossQuickCyloopEnergy, 40.0f);
+				
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitExistTarget[2], SonicParameters.Action.Smash);
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.quickCyloop.transitExistTarget[3], SonicParameters.Action.Smash);
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.aerialQuickCyloop.transitExistTarget[3], SonicParameters.Action.Smash);
 			}
 			else
 			{	
@@ -232,6 +227,10 @@ Code "Sonic Battle Edits"
 				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.aerialQuickCyloop.transitExistTarget[3], SonicParameters.Action.Root);
 				
 				RFL_SET_PARAM(SonicParametersInfo, common.cyloop.lossQuickCyloopEnergy, 60.0f);
+				
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitExistTarget[2], SonicParameters.Action.Root);
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.quickCyloop.transitExistTarget[3], SonicParameters.Action.Root);
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.aerialQuickCyloop.transitExistTarget[3], SonicParameters.Action.Root);
 			}
 		}
 		else 
@@ -260,6 +259,10 @@ Code "Sonic Battle Edits"
 				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.aerialQuickCyloop.transitExistTarget[3], SonicParameters.Action.Root);
 				
 				RFL_SET_PARAM(SonicParametersInfo, common.cyloop.lossQuickCyloopEnergy, 40.0f);
+				
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.spinSlash.transitExistTarget[2], SonicParameters.Action.Root);
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.quickCyloop.transitExistTarget[3], SonicParameters.Action.Root);
+				RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.aerialQuickCyloop.transitExistTarget[3], SonicParameters.Action.Root);
 			}
 		}
 	}

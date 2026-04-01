@@ -1,8 +1,8 @@
-# **Aggro-Titans Compact** - 2026.04.01
+# **Aggro-Titans Starfall** - 2026.04.01
 
 
 
-* At this point I'm settling for April 2026. Current Compressed Mod File Size: "1.65GB"
+* At this point I'm settling for April 2026. Current Compressed Mod File Size: "2.24GB"
 
 
 

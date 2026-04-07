@@ -182,24 +182,6 @@
 			"Description":["Tier 2 Color (Purple) for Wyvern and Tier 3 Color (Red) for Knight."]
 			}
 		],
-		"TitanAudio":
-		[
-			{
-			"DisplayName":"Original Audio",
-			"Value":"MBoss_Audio_0rgn",
-			"Description":["Original Audio from release."]
-			},
-			{
-			"DisplayName":"Sound Edit",
-			"Value":"MBoss_Audio_Edit",
-			"Description":["Edited Sounds"]
-			},
-			{
-			"DisplayName":"Sound Overhaul",
-			"Value":"MBoss_Audio_SO",
-			"Description":["Sound Overhaul"]
-			}
-		],
 		"RifleWing":
 		[
 			{

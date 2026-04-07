@@ -1,8 +1,8 @@
-# **Aggro-Titans Starfall** - 2026.04.01
+# **Aggro-Titans Starfall** - 2026.04.06
 
 
 
-* At this point I'm settling for April 2026. Current Compressed Mod File Size: "2.24GB"
+* At this point I'm settling for April 2026. Current Compressed Mod File Size: "1.08GB"
 
 
 
@@ -15,6 +15,11 @@ Public Release!
 
 
 *Test Version*
+
+C-04
+
+* During the Wyvern fight, when missing a parry under certain attacks (excluding the Laser attack) in Phase 1, Wyvern may continue attack instead of chase.
+* Added a new mlevel file inside the Bosscommon pac file for something specific later.
 
 C-03
 

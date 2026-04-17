@@ -1,4 +1,4 @@
-# **Aggro-Titans Starfall** - 2026.04.15
+# **Aggro-Titans Compact Update** - 2026.04.17
 
 
 
@@ -6,7 +6,7 @@
 
 
 
-#### **Aggro-Titans 1.40 - Compact Update**
+#### **1.40**
 
 Public Release!
 
@@ -16,14 +16,19 @@ Public Release!
 
 *Test Version*
 
+C-07
+
+* Code Adjustment for Phase 2 Supreme's memory address trigger.
+* Updated "zev\_dragon\_finish\_00"
+
+
+
 C-06
 
 * "EventCommon" file removed due to incompatibility with the "Sock's Rio Sonic" mod.
 * Moved "Eggman" texture files from "ev1770" to "bo6xxx" after discovering that apparently Eggman's textures load from this one file in Final Horizons.
 * Re-added "Supreme" and "The End" texture files to only ev5040 after discovering the rest of the "World 5" scenes seem to load the assets from that one file.
 * Fixed a QTE scene in Supreme's 3rd Preset
-
-
 
 C-05
 

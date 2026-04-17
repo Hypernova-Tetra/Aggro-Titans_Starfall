@@ -966,11 +966,10 @@ delete BossCutsceneAudio.hmm
 delete BossGiantDynamics.hmm
 delete BossDragonDynamics.hmm
 delete BossKnightDynamics.hmm
+delete BossRifle01Dynamics.hmm
 delete BossRifle01Dynamic1.hmm
 delete BossRifle01Dynamic2.hmm
-delete BossRifleBeastDynamics.hmm
-delete BossRifleDynamics.hmm
-delete BossRifle01Dynamics.hmm
-
 delete BossRifle01Bossbit.hmm
 delete BossRifle01Smash.hmm
+delete BossRifleBeastDynamics.hmm
+delete BossRifleDynamics.hmm

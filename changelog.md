@@ -6,11 +6,7 @@
 
 
 
-#### **1.40**
-
-Public Release!
-
-* Available for download
+#### **1.40 -** Public Release Available for Download
 
 
 

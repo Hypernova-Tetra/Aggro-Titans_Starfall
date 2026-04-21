@@ -14,7 +14,8 @@
 
 C-08
 
-* Unk
+* Fixed a crash problem with Supreme Phase 2
+* Updated Riflebeast code file to trigger certain scenes when specific Hyper Sonic mods are active.
 
 
 

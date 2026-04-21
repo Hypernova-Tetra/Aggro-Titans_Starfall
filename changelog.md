@@ -17,6 +17,7 @@ C-08
 * Fixed a crash problem with Supreme Phase 2
 * Updated Riflebeast code file to trigger certain scenes when specific Hyper Sonic mods are active.
 * Updated display text for the Shield Tackle toggle.
+* Fixed a QTE in Retooled and Oops All Bitlaser that had issues.
 
 
 

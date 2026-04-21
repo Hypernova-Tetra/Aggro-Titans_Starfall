@@ -1,4 +1,4 @@
-# **Aggro-Titans Compact Update** - 2026.04.17
+# **Aggro-Titans Compact Update** - 2026.04.21
 
 
 
@@ -12,14 +12,18 @@
 
 *Test Version*
 
+C-08
+
+* Unk
+
+
+
 C-07
 
 * Code Adjustment for Phase 2 Supreme's memory address trigger.
 * Updated "zev\_dragon\_finish\_00"
 * Added parameter for Sonic's aura color that changes SS2's aura color when choosing the aura option.
 * Updated "The End's Defeat" in Final Horizons for the blue and purple aura color option in where The End makes a desperation attack towards Sonic.
-
-
 
 C-06
 

@@ -85,7 +85,7 @@
 				},
 				{
 				"Name":"RifleShieldFix",
-				"DisplayName":"Riflebeast Shield Tackle Removal",
+				"DisplayName":"Riflebeast Shield Tackle",
 				"Description":["Toggle this option to disable Supreme's Shield Tackle if parrying this attack causes your game to crash."],
 				"Type":"NoTackle",
 				"MinValue":null,
@@ -234,14 +234,14 @@
 		"NoTackle":
 		[
 			{
-			"DisplayName":"Off",
+			"DisplayName":"Attack Enabled",
 			"Value":"0",
-			"Description":["If you're not having this issue, leave this off."]
+			"Description":["If you're not crashing, you can leave it this option."]
 			},
 			{
-			"DisplayName":"On",
+			"DisplayName":"Attack Disabled",
 			"Value":"1",
-			"Description":["Use only when your game crashes when trying to parry Supreme's arms when stopping him from tackling Sage and Friend's barrier."]
+			"Description":["If you're running certain codes or mods, or if you're having other unknown problems causing this crash, select this option."]
 			}
 		],
 		"SupremeM":

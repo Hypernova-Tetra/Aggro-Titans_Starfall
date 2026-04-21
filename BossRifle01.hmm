@@ -288,7 +288,10 @@ Code "Supreme Dynamics" by "Hypernova" and "Gordon Ramsay"
 					pkinematics->Rotation = new System.Numerics.Quaternion(0.0f, 1.0f, 0.0f, 0.0f);
 					
 					if ((isRifleBeast0) || (gameModeBattleRush))
-					{ Lua.Call("PlayDiEventFrozen", "bo4140");  }
+					{
+						var setupData = new EventPlayer.EventSetupData("bo4140");
+						evtPlayer->PlayEvent(ref setupData);
+					}
 					else
 					{
 						var setupData = new EventPlayer.EventSetupData("bo4142");

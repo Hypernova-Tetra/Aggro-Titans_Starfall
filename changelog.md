@@ -1,4 +1,4 @@
-# **Aggro-Titans Compact Update** - 2026.04.22
+# **Aggro-Titans Compact Update** - 2026.04.23
 
 * I May actually release this after all. Current 7z Compressed Mod File Size: "1.07GB"
 
@@ -12,9 +12,9 @@
 
 C-08
 
-* Fixed a crash problem with Supreme Phase 2
-* Updated Riflebeast code file to trigger certain scenes when specific Hyper Sonic mods are active.
-* Updated display text for the Shield Tackle toggle.
+* Fixed a crash problem with Supreme Phase 2.
+* Updated Riflebeast code file to trigger certain scenes when specific Hyper Sonic mods are active, may change aura color depending on mod.
+* Overhauled ShieldTackle Removal code, will activate when certain mods and/or codes are running and updated AttackReplacers.
 * Fixed a QTE in Retooled and Oops All Bitlaser that had issues.
 
 

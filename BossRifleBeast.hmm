@@ -139,9 +139,10 @@ Code "Monologue" by "Hypernova"
 			
 			bool isHyperDon1 = HMM.GetMods().Where(x => x.Name == "Dons Hyper Sonic update 3 (BLUE EYES)").Count() > 0;
 			bool isHyperDon2 = HMM.GetMods().Where(x => x.Name == "Dons Hyper Sonic Aura Update").Count() > 0;
+			bool isDefShad01 = HMM.GetMods().Where(x => x.Name == "Shadow The Hedgehog").Count() > 0;
 			bool isHyperAsu0 = HMM.GetMods().Where(x => x.Name == "Asu's Simple Hyper Sonic (reskin)").Count() > 0;
 			
-			if ((isHyperDon1) || (isHyperDon2))
+			if ((isHyperDon1) || (isHyperDon2) || (isDefShad01))
 			{
 				WriteProtected<byte>(Addressbo6180, System.Text.Encoding.UTF8.GetBytes("bo6181"));
 				
@@ -399,14 +400,19 @@ Code "No_Tackle" by "thej01"
     #import "Services"
 
     static bool IsConfigInitialised = false;
+	static bool shieldRemove = false;
 	static int NoTackle = 0;
-    static bool shieldBool = false;
     static int ReplaceNum = 0;
-    static BossRifleBeastConfig.AtackType[] AttackReplacers = new BossRifleBeastConfig.AtackType[2];
+    static BossRifleBeastConfig.AtackType[] AttackReplacers = new BossRifleBeastConfig.AtackType[8];
 
-    // there was originally more to this array 
-    AttackReplacers[0] = BossRifleBeastConfig.AtackType.AT_CROW_L;
-    AttackReplacers[1] = BossRifleBeastConfig.AtackType.AT_CROW_R;
+	AttackReplacers[0] = BossRifleBeastConfig.AtackType.AT_HIMING00;
+	AttackReplacers[1] = BossRifleBeastConfig.AtackType.AT_HIMING08;
+    AttackReplacers[2] = BossRifleBeastConfig.AtackType.AT_CROW_L;
+    AttackReplacers[3] = BossRifleBeastConfig.AtackType.AT_CROW_R;
+	AttackReplacers[4] = BossRifleBeastConfig.AtackType.AT_HIMING02;
+	AttackReplacers[5] = BossRifleBeastConfig.AtackType.AT_HIMING04;
+    AttackReplacers[6] = BossRifleBeastConfig.AtackType.AT_CROW_R;
+    AttackReplacers[7] = BossRifleBeastConfig.AtackType.AT_CROW_L;
 
     var RifleBeastInfo = Reflection.GetDataInfo<BossRifleBeastConfig.Root>("boss_rifle_beast");
 //
@@ -418,19 +424,62 @@ Code "No_Tackle" by "thej01"
 		if (mod == null)
 			return;
 
-		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
-		var ini = INI.Read(modConfigIniPath);
-
-		NoTackle = INI.Parse<int>(ini["Main"]["RifleShieldFix"], NoTackle);
         IsConfigInitialised = true;
-
-        if (NoTackle == 1)
-        { shieldBool = true; }
+		
+		bool isDefShad01 = HMM.GetMods().Where(x => x.Name == "Shadow The Hedgehog").Count() > 0;
+		bool isVnllPlusE = HMM.GetMods().Where(x => x.Name == "Vanilla+ Experience").Count() > 0;
+		bool isDefEdtMod = HMM.GetMods().Where(x => x.Name == "Definitive Edition").Count() > 0;
+		bool isSuprChrge = HMM.GetMods().Where(x => x.Name == "Supercharged Combat").Count() > 0;
+		bool isUnlshdBst = HMM.GetMods().Where(x => x.Name == "Unleashed Boost Aura").Count() > 0;
+		
+		bool isCrashSn00 = HMM.GetCodes().Contains("Gameplay/Skills/Sonic/Allow Cyclone Kick for Traversal")
+		bool isCrashSn01 = HMM.GetCodes().Contains("Gameplay/Skills/Sonic/Allow Dodging from Homing Shot")
+		bool isCrashSn02 = HMM.GetCodes().Contains("Gameplay/Skills/Sonic/Disable Sonic Boom for Regular Objects")
+		bool isSoftLck00 = HMM.GetCodes().Contains("Gameplay/Skills/Sonic/Air Trick from Rails")
+		bool isSoftLck01 = HMM.GetCodes().Contains("Gameplay/Skills/Sonic/Drop Dash on Slide")
+		
+		bool isCrashSn03 = HMM.GetCodes().Contains("Gameplay/Skills/Always Allow Jumping Off Rails")
+		bool isCrashSn04 = HMM.GetCodes().Contains("Gameplay/Skills/Always Dodge in Stick Direction")
+		bool isCrashSn05 = HMM.GetCodes().Contains("Gameplay/Skills/Always Dodge with Side Step")
+		bool isCrashSn06 = HMM.GetCodes().Contains("Gameplay/Skills/Always Stay on Climbable Walls")
+		bool isCrashSn07 = HMM.GetCodes().Contains("Gameplay/Skills/Rail Crouch")
+		bool isCrashSn08 = HMM.GetCodes().Contains("Gameplay/Skills/Rail Dash")
+		bool isCrashSn09 = HMM.GetCodes().Contains("Gameplay/Skills/Super Stomp")
+		bool isSoftLck02 = HMM.GetCodes().Contains("Gameplay/Skills/Allow Boost to damage objects")
+		
+		bool isCrashSn10 = HMM.GetCodes().Contains("Physics/Sonic/Airborne Drop Dash Rotation")
+		
+		bool isCrashSn11 = HMM.GetCodes().Contains("Physics/Allow Gravity to Affect Parry")
+		bool isCrashSn12 = HMM.GetCodes().Contains("Physics/Classic Jump Deceleration")
+		bool isCrashSn13 = HMM.GetCodes().Contains("Physics/Enhanced Homing Attack Rebound")
+		bool isCrashSn14 = HMM.GetCodes().Contains("Physics/Retain Horizontal Velocity from Jump")
+		bool isCrashSn15 = HMM.GetCodes().Contains("Physics/Retain Horizontal Velocity from Stomp")
+		
+		bool isCrashSn16 = HMM.GetCodes().Contains("Fixes/Gameplay/States/Fix Air Boost Transitions")
+		bool isCrashSn17 = HMM.GetCodes().Contains("Fixes/Gameplay/States/Fix Drop Dash Transitions")
+		bool isCrashSn18 = HMM.GetCodes().Contains("Fixes/Gameplay/States/Fix Spin Transitions")
+		bool isCrashSn19 = HMM.GetCodes().Contains("Fixes/Gameplay/States/Fix Stomp Transitions")
+		
+		bool isCrashSn20 = HMM.GetCodes().Contains("Fixes/Gameplay/Fix Damage from Jumping into Enemies")
+		bool isCrashSn21 = HMM.GetCodes().Contains("Fixes/Gameplay/Fix Rolling in 2D")
+		bool isCrashSn22 = HMM.GetCodes().Contains("Fixes/Gameplay/Fix Wall Walking")
+		
+		bool isCrashSn23 = HMM.GetCodes().Contains("Gameplay/Open Zone/Skills/Sonic/Disable Air Tricks from Terrain")
+		bool isCrashSn24 = HMM.GetCodes().Contains("Gameplay/Open Zone/Skills/Sonic/Disable Air Tricks from Traversal Objects")
+		
+		bool isCrashSn25 = HMM.GetCodes().Contains("Animation/Amy/Disable Card Spin Boost Transition")
+		
+		bool isCrashSn26 = HMM.GetCodes().Contains("Animation/Tails/Disable Cyclone Transition")
+		
+		bool isCrashSn27 = HMM.GetCodes().Contains("Animation/Somersault Landing at High Velocity")
+		
+		if ((isDefShad01) || (isVnllPlusE) || (isDefEdtMod) || (isSuprChrge) || (isCrashSn00) || (isCrashSn01) || (isCrashSn02) || (isCrashSn03) || (isCrashSn04) || (isCrashSn05) || (isCrashSn06) || (isCrashSn07) || (isCrashSn08) || (isCrashSn09) || (isCrashSn10) || (isCrashSn11) || (isCrashSn12) || (isCrashSn13) || (isCrashSn14) || (isCrashSn15) || (isCrashSn16) || (isCrashSn17) || (isCrashSn18) || (isCrashSn19) || (isCrashSn20) || (isCrashSn21) || (isCrashSn22) || (isCrashSn23) || (isCrashSn24) || (isCrashSn25) || (isCrashSn26) || (isCrashSn27) || (isSoftLck00) || (isSoftLck01) || (isSoftLck02))
+        { shieldRemove = true; }
         else
-        { shieldBool = false; }
+        { shieldRemove = false; }
     }
 	
-	if (!shieldBool)
+	if (!shieldRemove)
 		return;
 	{
 		var BossRifleBeastConfigInfo = Reflection.GetDataInfo<BossRifleBeastConfig.Root>("boss_rifle_beast");

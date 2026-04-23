@@ -84,15 +84,6 @@
 				"DefaultValue":"0"
 				},
 				{
-				"Name":"RifleShieldFix",
-				"DisplayName":"Riflebeast Shield Tackle",
-				"Description":["Toggle this option to disable Supreme's Shield Tackle if parrying this attack causes your game to crash."],
-				"Type":"NoTackle",
-				"MinValue":null,
-				"MaxValue":null,
-				"DefaultValue":"0"
-				},
-				{
 				"Name":"RifleBeastYap",
 				"DisplayName":"Monologue during cutscenes",
 				"Description":["Choose wheather the fight will have The End monologue during cutscenes or not."],
@@ -222,19 +213,6 @@
 			"Description":["Supreme uses the large diamond turrets more often here. Bitlaser01 and 02 have their extended uncut animations."]
 			}
 		],	
-		"NoTackle":
-		[
-			{
-			"DisplayName":"Attack Enabled",
-			"Value":"0",
-			"Description":["If you're not crashing, you can leave it this option."]
-			},
-			{
-			"DisplayName":"Attack Disabled",
-			"Value":"1",
-			"Description":["If you're running certain codes or mods, or if you're having other unknown problems causing this crash, select this option."]
-			}
-		],
 		"SupremeM":
 		[
 			{

@@ -27,8 +27,7 @@ add Main/raw/event/scene/zev_dragon_sp_02.pac
 add Main/raw/event/scene/zev_dragon_sp_laser01.pac
 add Main/raw/event/scene/zev_dragon_sp_missile.pac
 add Main/raw/event/scene/zev_dragon_sp_psycho.pac
-add Main/raw/event/scene/zev_knight_sonic_damage01.pac
-add Main/raw/event/scene/zev_knight_sonic_damage02.pac
+add Main/raw/event/scene/zev_knight_sonic_damageXX.pac
 add Main/raw/event/scene/zev_knight_sonic_sp01.pac
 add Main/raw/event/scene/zev_knight_sonic_sp01_phase2.pac
 add Main/raw/event/scene/zev_knight_sonic_sp02_phase2.pac
@@ -166,6 +165,8 @@ delete Main/raw/event/scene/zev_dragon_laser.pac
 delete Main/raw/event/scene/zev_dragon_sp_laser.pac
 delete Main/raw/event/scene/zev_rfl_sp02.pac
 delete Main/raw/event/scene/zev_knight_shieldride01_aerial.pac
+delete Main/raw/event/scene/zev_knight_sonic_damage01.pac
+delete Main/raw/event/scene/zev_knight_sonic_damage02.pac
 delete Main/raw/event/scene/zev_knight_sonic_damage03.pac
 delete Main/raw/event/scene/zev_knight_sonic_damage04.pac
 delete Main/raw/event/scene/zev_knight_sonic_damage05.pac

@@ -16,6 +16,7 @@ C-08
 * Updated Riflebeast code file to trigger certain scenes when specific Hyper Sonic mods are active, may change aura color depending on mod.
 * Overhauled ShieldTackle Removal code, will activate when certain mods and/or codes are running and updated AttackReplacers.
 * Fixed a QTE in Retooled and Oops All Bitlaser that had issues.
+* Updated "zev\_knight\_sonic\_damage" events.
 
 
 

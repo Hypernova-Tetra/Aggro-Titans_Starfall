@@ -1,4 +1,4 @@
-# **Aggro-Titans Compact Update** - 2026.04.23
+# **Aggro-Titans Compact Update** - 2026.04.24
 
 * I May actually release this after all. Current 7z Compressed Mod File Size: "1.07GB"
 

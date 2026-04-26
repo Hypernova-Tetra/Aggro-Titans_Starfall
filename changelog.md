@@ -13,6 +13,7 @@
 * Updated bo4xxx.
 * Fixed an error with The End's Monologue for purple aura
 * Fixed a couple of issues with Supreme.
+* Buffed Wyvern Grand Slam Damage
 
 
 

@@ -1,4 +1,4 @@
-# **Aggro-Titans Compact Update** - 2026.04.24
+# **Aggro-Titans Compact Update** - 2026.04.25
 
 * I May actually release this after all. Current 7z Compressed Mod File Size: "1.07GB"
 
@@ -17,6 +17,7 @@ C-08
 * Overhauled ShieldTackle Removal code, will activate when certain mods and/or codes are running and updated AttackReplacers.
 * Fixed a QTE in Retooled and Oops All Bitlaser that had issues.
 * Updated "zev\_knight\_sonic\_damage" events.
+* Updated bo4xxx.
 
 
 

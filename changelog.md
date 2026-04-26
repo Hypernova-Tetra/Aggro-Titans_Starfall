@@ -11,9 +11,10 @@
 *Test Version C-09*
 
 * Updated bo4xxx.
-* Fixed an error with The End's Monologue for purple aura
+* Fixed an error with The End's Monologue for purple aura.
 * Fixed a couple of issues with Supreme.
 * Buffed Wyvern Grand Slam Damage
+* Updated Combat Mod option. When using Chaos Polarity, Boss HP will automatically be reduced.
 
 
 

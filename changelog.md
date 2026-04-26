@@ -1,4 +1,4 @@
-# **Aggro-Titans Compact Update** - 2026.04.25
+# **Aggro-Titans Compact Update** - 2026.04.26
 
 * I May actually release this after all. Current 7z Compressed Mod File Size: "1.07GB"
 
@@ -8,7 +8,13 @@
 
 
 
-*Test Version*
+*Test Version C-09*
+
+* Updated bo4xxx.
+* Fixed an error with The End's Monologue for purple aura
+* Fixed a couple of issues with Supreme.
+
+
 
 C-08
 
@@ -17,9 +23,6 @@ C-08
 * Overhauled ShieldTackle Removal code, will activate when certain mods and/or codes are running and updated AttackReplacers.
 * Fixed a QTE in Retooled and Oops All Bitlaser that had issues.
 * Updated "zev\_knight\_sonic\_damage" events.
-* Updated bo4xxx.
-
-
 
 C-07
 

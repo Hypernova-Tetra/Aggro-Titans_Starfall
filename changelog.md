@@ -15,6 +15,7 @@
 * Fixed a couple of issues with Supreme.
 * Buffed Wyvern Grand Slam Damage
 * Updated Combat Mod option. When using Chaos Polarity, Boss HP will automatically be reduced.
+* Fixed in error in where HP values may not have been reduced when Combat Mod options were on.
 
 
 

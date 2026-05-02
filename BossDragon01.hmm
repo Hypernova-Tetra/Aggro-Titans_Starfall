@@ -1,5 +1,6 @@
 Patch "Wyvern Address Edits" by "Hypernova"
 {
+	WriteProtected<byte> (/* 0x141446894 */ ScanSignature ("bo2xxx", "xxxxxx"), System.Text.Encoding.UTF8.GetBytes("bo2x00"));
 	WriteProtected<byte> (/* 0x14144C97C */ ScanSignature ("bo2140", "xxxxxx"), System.Text.Encoding.UTF8.GetBytes("bo2141")); // To make Wyvern's Phase 2 skippable.
 	WriteProtected<byte> (/* 0x141556030 */ ScanSignature ("boss_giant02_bo2110","xxxxxxxxxxxxxxxxxxx"), System.Text.Encoding.UTF8.GetBytes("update_event_signal"));
 	WriteProtected<byte> (/* 0x14144C948 */ ScanSignature ("boss_giant02_bo2115","xxxxxxxxxxxxxxxxxxx"), System.Text.Encoding.UTF8.GetBytes("update_event_signal"));
@@ -58,8 +59,13 @@ Patch "Wyvern_Combat_2"
 
     static bool IsConfigInitialised = false;
 	static int BossHP = 0;
+	static bool healthBool = false;
 //
 {
+	var BossDragonConfigInfo = Reflection.GetDataInfo<BossDragonConfig.Root>("boss_dragon");
+	if (BossDragonConfigInfo.pData == null)
+		return;
+		
     if (!IsConfigInitialised)
     {
 		var mod = HMM.GetModByID("566416");
@@ -67,10 +73,6 @@ Patch "Wyvern_Combat_2"
 		if (mod == null)
 			return;
 
-		var BossDragonConfigInfo = Reflection.GetDataInfo<BossDragonConfig.Root>("boss_dragon");
-		if (BossDragonConfigInfo.pData == null)
-			return;
-	
 		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
 		var ini = INI.Read(modConfigIniPath);
 
@@ -78,20 +80,24 @@ Patch "Wyvern_Combat_2"
         IsConfigInitialised = true;
 		
 		bool isChaosPolarity = HMM.GetMods().Where(x => x.Name == "Chaos Polarity").Count() > 0;
-		
-		if ((BossHP != 0) || (isChaosPolarity))
-        {
-			RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 150000);
-			RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 8250);
-			RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 3500);
-		}
+		if ((BossHP == 1) || (isChaosPolarity))
+        { healthBool = true; }
         else
-        {
-			RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 325000);
-			RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 11500);
-			RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 9000);
-		}
+        { healthBool = false; }
     }
+	
+	if (!healthBool)
+	{
+		RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 312500);
+		RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 25000);
+		RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 12500);
+	}
+	else
+	{
+		RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 125000);
+		RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 9000);
+		RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 4500);
+	}
 };
 
 Code "Wyvern Dynamics" by "Hypernova"

@@ -10,8 +10,9 @@
 
 *Test Version C-10*
 
-* Updated bo2xxx to resolve an issue where Phase 2 Wyvern still had a chance of a black screen after the scene ends.
+* Updated bo2xxx to resolve an issue where Phase 2 Wyvern still had a chance of a black screen after the scene ends during the base story.
 * Tweaked the Combat Mod settings. Also renamed it to "Combat Toggle".
+* Chaos Polarity should now automatically toggle the bosses HP to be reduced.
 
 
 

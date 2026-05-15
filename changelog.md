@@ -14,7 +14,7 @@
 * Tweaked the Combat Mod settings. Also renamed it to "Combat Toggle".
 * Chaos Polarity should now automatically toggle the bosses HP to be reduced.
 * Small Tweaks to HP values and renamed "Combat Mod" name to "Titan HP" and description, then relocated the option in to "Titan Boss Setting" section.
-* Fixed an issue where the Shield Tackle Code only functioned when Grand Slam option is set to "Unused Cinematic"
+* Fixed an issue where the Shield Tackle Code only functioned when Grand Slam option is set to "Unused Cinematic".
 
 
 

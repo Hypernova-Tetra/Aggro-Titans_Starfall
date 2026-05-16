@@ -8,15 +8,19 @@
 
 
 
-*Test Version C-10*
+*Final Round*
+
+* Fixed an issue where the Shield Tackle Code only functioned when Grand Slam option is set to "Unused Cinematic".
+* Fixed an error with The Final Horizons Intro of "The End" that had some caption issues and a lack of camera shaking in some parts.
+
+
+
+C-10
 
 * Updated bo2xxx to resolve an issue where Phase 2 Wyvern still had a chance of a black screen after the scene ends during the base story.
 * Tweaked the Combat Mod settings. Also renamed it to "Combat Toggle".
 * Chaos Polarity should now automatically toggle the bosses HP to be reduced.
 * Small Tweaks to HP values and renamed "Combat Mod" name to "Titan HP" and description, then relocated the option in to "Titan Boss Setting" section.
-* Fixed an issue where the Shield Tackle Code only functioned when Grand Slam option is set to "Unused Cinematic".
-
-
 
 C-09
 

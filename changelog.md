@@ -1,4 +1,4 @@
-# **Aggro-Titans Compact Update** - 2026.05.18
+# **Aggro-Titans Compact Update** - 2026.05.21
 
 * I May actually release this after all. Current 7z Compressed Mod File Size: "1.07GB"
 
@@ -13,7 +13,7 @@
 * Version bumped for final round of tests and bug searching to patch out before release, no further major development will be made.
 * Fixed an error with The Final Horizons Intro of "The End" that had some caption issues and a lack of camera shaking in some parts.
 * Fixed an issue where the Shield Tackle Code only functioned when Grand Slam option is set to "Unused Cinematic".
-* Adjusted Combat Mod settings, now has 4 options. "Low HP", "Medium HP", "High HP", "Very High HP".
+* Adjusted Combat Mod settings, now has 3 options. "Low HP", "Medium HP", "High HP".
 
 
 

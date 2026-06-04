@@ -1,10 +1,20 @@
-# **Aggro-Titans Compact Update** - 2026.06.02
+# **Aggro-Titans Compact Update** - 2026.06.04
 
-* I May actually release this after all. Current 7z Compressed Mod File Size: "1.07GB"
+* Current 7z Compressed Mod File Size: "1.07GB"
 
 
 
-#### **1.40 -** Public Release Available for Download
+#### **1.41 - Battle Rush Patch**
+
+* Fixed a problem where the Titans in Battle Rush were not using their original values.
+* Fixed a problem where the Titans in Battle Rush were not using modified Medium HP values when "Boss Select Rematch" mod is active.
+* Fixed an issue where the variant Super Sonic transformation scenes for Giganto weren't playing in certain intended game modes.
+
+
+
+1.40 - Public Release Available
+
+* Released June 3rd, 2026
 
 
 

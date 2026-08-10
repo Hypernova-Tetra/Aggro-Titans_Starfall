@@ -1,14 +1,13 @@
 Patch "Giganto Address Edits" by "Hypernova"
 {
-	WriteProtected<byte> (/* 0x14144E178 */ ScanSignature ("bo1xxx", "xxxxxx"), System.Text.Encoding.UTF8.GetBytes("bo1xxx"));
-	WriteProtected<byte> (/* 0x1414534E4 */ ScanSignature ("bo1140", "xxxxxx"), System.Text.Encoding.UTF8.GetBytes("bo1141")); // To make Giganto's Phase 2 skippable.
+	WriteProtected<byte> (/* 0x1414534E4 */ ScanSignature ("bo1140", "xxxxxx"), System.Text.Encoding.UTF8.GetBytes("bo1141"));
 	WriteProtected<byte> (/* 0x1414534D0 */ ScanSignature ("boss_giant01_bo1120","xxxxxxxxxxxxxxxxxxx"), System.Text.Encoding.UTF8.GetBytes("update_event_signal"));
 	WriteProtected<byte> (/* 0x1414534F0 */ ScanSignature ("boss_giant01_bo1140","xxxxxxxxxxxxxxxxxxx"), System.Text.Encoding.UTF8.GetBytes("update_event_signal"));
 	WriteProtected<byte> (/* 0x141453528 */ ScanSignature ("boss_giant01_bo1160","xxxxxxxxxxxxxxxxxxx"), System.Text.Encoding.UTF8.GetBytes("update_event_signal"));
 	WriteProtected<byte> (/* 0x141453550 */ ScanSignature ("boss_giant01_bo1180","xxxxxxxxxxxxxxxxxxx"), System.Text.Encoding.UTF8.GetBytes("update_event_signal"));
 }
 
-Code "Giganto_Combat"
+Patch "Giganto_Combat"
 //
 	#include "Reflection" noemit
 	#lib "Reflection"
@@ -79,15 +78,10 @@ Code "Giganto_Combat"
 
 Code "Giganto Dynamics" by "Hypernova"
 //
-	#include "Reflection" noemit
 	#lib "GameManager"
-	#lib "Reflection"
 	#lib "EventPlayer"
 	#lib "GameObject"
-	#lib "Lua"
 	#lib "Player"
-	#lib "Sonic"
-	#lib "Memory"
 	
 	#import "Services"
 	#import "GOComponents"
@@ -119,12 +113,12 @@ Code "Giganto Dynamics" by "Hypernova"
 	bool isGiant01 = (GameManager.GetGameObject("Giant0") != null)
 	if (!isGiant01)
 		return;
-	{	
+	{
 		string eventName = evtPlayer->GetCurrentEventName();
 		switch (eventName)
 		{
 			case "ga1225":
-				WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1122")); // Boi Animation
+				WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1122"));
 				WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1151")); 
 			break;
 			
@@ -159,7 +153,7 @@ Code "Giganto Dynamics" by "Hypernova"
 		
 		if (gameModeBattleRush)
 		{
-			WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1120")); // Original Animation
+			WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1120"));
 			
 			bool isBSRActive = HMM.GetMods().Where(x => x.Name == "Boss Select Rematch").Count() > 0;
 			if (!isBSRActive)
@@ -169,14 +163,14 @@ Code "Giganto Dynamics" by "Hypernova"
 		}
 		if (gameModeBossRush)
 		{
-			WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1121")); // Tru-Blu Animation
+			WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1121"));
 			WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1161")); 
 		}
 
 	}
 	
 	bool isGiantSkipF2 = evtPlayer->IsEventPlaying("bo1141")
-	if (!isGiantSkipF2) // This has to stay here outside of any inner bracket to function.
+	if (!isGiantSkipF2)
 		return;
 	{	
 		var pkinematics = Player.Kinematics.Get();
@@ -202,7 +196,6 @@ Code "Giganto_ActionType"
 	#lib "Reflection"
 	#lib "BossGiantConfig"
     #lib "HMM"
-    #import "Services"
 //
 {
 	var BossGiantConfigInfo = Reflection.GetDataInfo<BossGiantConfig.Root>("boss_giant");
